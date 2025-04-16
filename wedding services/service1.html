@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Cards</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- custom css link -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-section {
+    background-image: url('weddingbackground1.jpeg'); /* replace with your background image */
+    background-size: cover;
+    background-position: center;
+    padding: 180px 20px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    margin-top: 95px ;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin: 10px 0 0 0;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 30%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    background-color: #b31312;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.1em;
+    color: white;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-body h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.price {
+    color: #b31312;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.add-btn {
+    background-color: #b31312;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background-color: #b31312;
+}
+
+.services, .artist-experience, .products {
+    text-align: left;
+    margin: 10px 0;
+}
+
+.services ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.services li {
+    margin: 5px 0;
+}
+
+.image-slider {
+    display: flex;
+    overflow-x: auto;
+}
+
+.image-slider img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.latest-work-section {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.latest-work-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.album-tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    font-size: 1em;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-button.active, .tab-button:hover {
+    border-bottom: 2px solid #b31312;
+    color: #b31312;
+}
+
+.dropdown select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.album-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.album-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.album-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.album-card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.album-info {
+    padding: 10px;
+}
+
+.album-info h3 {
+    margin: 10px 0;
+}
+
+.album-info p {
+    margin: 5px 0;
+    color: #666;
+}
+ul.breadcrumb {
+  padding: 0px 16px;
+  list-style: none;
+  /* background-color: #eee; */
+  color: #ff0000;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: rgb(250, 250, 250);
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #b31312;
+  text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+        <!-- header section starts -->
+
+<header class="header">
+
+    <a data-aos="zoom-in-left" data-aos-delay="150" href="#" class="logo"> <img src="/logo.png" style="height: 80px; margin-left: 50px;"></a>
+
+    <nav class="navbar" >
+        <a data-aos="zoom-in-left" data-aos-delay="300" href="/wedding/index.html" style="color: white;">Home</a>
+        <a data-aos="zoom-in-left" data-aos-delay="450" href="/portfolio/wedding/services.html" style="color: white;">Service</a>
+        <a data-aos="zoom-in-left" data-aos-delay="600" href="/portfolio/wedding/Portfolio.html" style="color: white;">Portfolio</a>
+        <a data-aos="zoom-in-left" data-aos-delay="750" href="/about us/about.html" style="color: white;">About</a>
+        <a data-aos="zoom-in-left" data-aos-delay="900" href="/contact/contact.html" style="color: white;">Contact</a>
+        <a data-aos="zoom-in-left" data-aos-delay="1050" href="/blogs/blog.html" style="color: white;">Blog</a>
+        <a data-aos="zoom-in-left" data-aos-delay="1200" href="/wedding faqs/faq.html" style="color: white;">FAQ's</a>
+    </nav>
+    
+    <div class="icons">
+        <div data-aos="zoom-in-left" data-aos-delay="1350"  id="theme-btn"></div>
+        <div data-aos="zoom-in-left" data-aos-delay="1500" class="fas fa-bars" id="menu"></div>
+    </div>
+    <div>
+        <i class="bi bi-person-circle" style="font-size: 24px; color: white; margin-right:100px ;"></i>
+
+          
+</div>
+
+</header>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1> COSMETIC CRAFT</h1>
+            <p>Discover the perfect package to transform your exclusive day into an extraordinary experience.</p>
+            <br>
+            <br>
+            <ul class="breadcrumb">
+                <li><a href="/wedding/index.html">Home</a></li>
+                <li><a href="/portfolio/wedding/services.html">Services</a></li>
+                <li>Package</li>
+              </ul>
+        </div>
+    </div>
+    <h2 style="margin-left: 55px; margin-top: 50px;">Select Package</h2>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    Recommended for friends of the bride
+                </div>
+            </div>
+            <div class="card-body">
+                <h2>Beauty Artisans Silver Package</h2>
+                <div class="price">₹ 6,500 /person</div>
+              
+                <div class="services">
+                    <p>Services :</p>
+                    <ul>
+                        <li>✔ Makeup</li>
+                        <li>✔ Hair (Straightening/Curls/Blow)</li>
+                        <li>✕ Draping</li>
+                        <li>✕ Lashes</li>
+                        <li>✕ Nail Polish</li>
+                    </ul>
+                </div>
+                <div class="artist-experience">
+                    <p>Artist Experience :</p>
+                    <p>2 yrs+</p>
+                </div>
+                <div class="products">
+                    <p>Products :</p>
+                    <p>Mac, Kryolan and similar brands</p>
+                </div>
+                <div class="image-slider">
+                    <img src="silver1.jpg" alt="Image 1">
+                    <img src="silver2.jpg" alt="Image 2">
+                    <img src="silver3.jpg" alt="Image 3">
+                    <img src="silver4.jpg" alt="Image 4">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    Recommended for close family
+                </div>
+            </div>
+            <div class="card-body">
+                <h2>Beauty Artisans Gold Package</h2>
+                <div class="price">₹ 9,000 /person</div>
+              
+                <div class="services">
+                    <p>Services :</p>
+                    <ul>
+                        <li>✔ Makeup</li>
+                        <li>✔ Hair (Buns/Braids/Any Hairstyle)</li>
+                        <li>✔ Draping</li>
+                        <li>✔ Lashes</li>
+                        <li>✕ Nail Polish</li>
+                    </ul>
+                </div>
+                <div class="artist-experience">
+                    <p>Artist Experience :</p>
+                    <p>4 yrs+</p>
+                </div>
+                <div class="products">
+                    <p>Products :</p>
+                    <p>Huda Beauty, Bobbi Brown, Sepho...</p>
+                </div>
+                <div class="image-slider">
+                    <img src="gold1.jpg" alt="Image 1">
+                    <img src="gold2.jpg" alt="Image 2">
+                    <img src="gold3.jpg" alt="Image 3">
+                    <img src="gold4.jpg" alt="Image 4">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    Recommended for bride in small functions
+                </div>
+            </div>
+            <div class="card-body">
+                <h2>Beauty Artisans Diamond Package</h2>
+                <div class="price">₹ 12,000 /person</div>
+               
+                <div class="services">
+                    <p>Services :</p>
+                    <ul>
+                        <li>✔ Makeup</li>
+                        <li>✔ Hair (Buns/Braids/Any Hairstyle)</li>
+                        <li>✔ Draping</li>
+                        <li>✔ Lashes</li>
+                        <li>✔ Nail Polish</li>
+                    </ul>
+                </div>
+                <div class="artist-experience">
+                    <p>Artist Experience :</p>
+                    <p>6 yrs+</p>
+                </div>
+                <div class="products">
+                    <p>Products :</p>
+                    <p>Chanel, Dior, Smashbox and simila...</p>
+                </div>
+                <div class="image-slider">
+                    <img src="diamond1.jpg" alt="Image 1">
+                    <img src="diamond2.jpg" alt="Image 2">
+                    <img src="diamond3.jpg" alt="Image 3">
+                    <img src="diamond4.jpg" alt="Image 4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Image Section -->
+    <div class="latest-work-section">
+        <h2>Our latest work</h2>
+        <div class="album-tabs">
+            <button class="tab-button active">Album(06)</button>
+
+        </div>
+        <div class="album-container">
+            <div class="album-card">
+                <img src="fac1.jpg" alt="Lucknow ChicSplash">
+                <div class="album-info">
+                    <h3>Lucknow ChicSplash</h3>
+                    <p>Silver package | Shot in Lucknow</p>
+                    <p>Uploaded on 8 Mar 2024</p>
+                </div>
+            </div>
+            <div class="album-card">
+                <img src="fac2.jpg" alt="Ludhiana Ki Beauty">
+                <div class="album-info">
+                    <h3>Ludhiana Ki Beauty</h3>
+                    <p>Gold package | Shot in Ludhiana</p>
+                    <p>Uploaded on 5 Mar 2024</p>
+                </div>
+            </div>
+            <div class="album-card">
+                <img src="fac3.jpg" alt="Dilli Di Kudiyan">
+                <div class="album-info">
+                    <h3>Dilli Di Kudiyan</h3>
+                    <p>Gold package | Shot in Delhi NCR</p>
+                    <p>Uploaded on 8 Mar 2024</p>
+                </div>
+            </div>
+            <div class="album-card">
+                <img src="fac4.avif" alt="Nupur's Dulhan Dazzle">
+                <div class="album-info">
+                    <h3>Nupur's Dulhan Dazzle</h3>
+                    <p>Gold package | Shot in Delhi NCR</p>
+                    <p>Uploaded on 8 Mar 2024</p>
+                </div>
+            </div>
+            <div class="album-card">
+                <img src="fac5.avif" alt="Mayanka's FamilyGlam">
+                <div class="album-info">
+                    <h3>Mayanka's FamilyGlam</h3>
+                    <p>Silver package | Shot in Delhi NCR</p>
+                    <p>Uploaded on 8 Mar 2024</p>
+                </div>
+            </div>
+            <div class="album-card">
+                <img src="fac6.jpg" alt="Koyli's Makeover">
+                <div class="album-info">
+                    <h3>Koyli's Makeover</h3>
+                    <p>Diamond package | Shot in Pune</p>
+                    <p>Uploaded on 29 Apr 2022</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <section class="footer">
+
+        <div class="box-container">
+    
+          <div class="box" data-aos="fade-up">
+            <h3><img src="logo.png" style="height: 80px;"></h3>
+            <p>We are a team of experienced wedding planners dedicated to creating unforgettable weddings for our clients.</p>
+          </div>
+    
+          <div class="box" data-aos="fade-up">
+            <h3>Our Services</h3>
+              <a href="#"><i class="fas fa-chevron-right"></i> Full Wedding Planning</a>
+              <a href="#"><i class="fas fa-chevron-right"></i> Partial Wedding Planning</a>
+              <a href="#"><i class="fas fa-chevron-right"></i> Day-of Coordination</a>
+              <a href="#"><i class="fas fa-chevron-right"></i> Vendor Referrals</a>
+          </div>
+    
+          <div class="box" data-aos="fade-up">
+            <h3>Contact Us</h3>
+            <a href="#"><i class="fas fa-phone"></i> 123-595-5555</a>
+            <a href="#"><i class="fas fa-phone"></i> 555-555-5555</a>
+            <a href="#"><i class="fas fa-envelope"></i> info@weddingplanner.com</a>
+            <a href="#"><i class="fas fa-map"></i> 123 Main St, Anytown USA</a>
+          </div>
+    
+          <div class="box" data-aos="fade-up">
+            <h3>Follow Us</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+           
+          </div>
+          
+        </div>
+        <div style="color: white; background-color: #2B2A4C; font-size: 16px; text-align: center;"><p>&copy; copyright @ 2023 by weddingplanner</p></div>
+        
+      </footer>
+</body>
+</html>

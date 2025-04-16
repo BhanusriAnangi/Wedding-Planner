@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Cards</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- custom css link -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-section {
+    background-image: url('weddingbackground2.jpg'); /* replace with your background image */
+    background-size: cover;
+    background-position: center;
+    padding: 180px 20px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    margin-top: 95px;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin: 10px 0 0 0;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 30%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    background-color: #b31312;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.1em;
+    color: white;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-body h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.price {
+    color: #b31312;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.add-btn {
+    background-color: #b31312;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background-color: #b31312;
+}
+
+.services, .artist-experience, .products {
+    text-align: left;
+    margin: 10px 0;
+}
+
+.services ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.services li {
+    margin: 5px 0;
+}
+
+.image-slider {
+    display: flex;
+    overflow-x: auto;
+}
+
+.image-slider img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.latest-work-section {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.latest-work-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.album-tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    font-size: 1em;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-button.active, .tab-button:hover {
+    border-bottom: 2px solid #b31312;
+    color: #b31312;
+}
+
+.dropdown select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.album-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.album-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.album-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.album-card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.album-info {
+    padding: 10px;
+}
+
+.album-info h3 {
+    margin: 10px 0;
+}
+
+.album-info p {
+    margin: 5px 0;
+    color: #666;
+}
+ul.breadcrumb {
+  padding: 0px 16px;
+  list-style: none;
+  /* background-color: #eee; */
+  color: #ff0101;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: rgb(253, 253, 253);
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #b31312;
+  text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+        
+    <!-- header section starts -->
+
+<header class="header">
+
+    <a data-aos="zoom-in-left" data-aos-delay="150" href="#" class="logo"> <img src="logo.png" style="height: 80px; margin-left: 50px;"></a>
+
+    <nav class="navbar" >
+        <a data-aos="zoom-in-left" data-aos-delay="300" href="/wedding/index.html" style="color: white;">Home</a>
+        <a data-aos="zoom-in-left" data-aos-delay="450" href="/portfolio/wedding/services.html" style="color: white;">Service</a>
+        <a data-aos="zoom-in-left" data-aos-delay="600" href="/portfolio/wedding/Portfolio.html" style="color: white;">Portfolio</a>
+        <a data-aos="zoom-in-left" data-aos-delay="750" href="/about us/about.html" style="color: white;">About</a>
+        <a data-aos="zoom-in-left" data-aos-delay="900" href="/contact/contact.html" style="color: white;">Contact</a>
+        <a data-aos="zoom-in-left" data-aos-delay="1050" href="/blogs/blog.html" style="color: white;">Blog</a>
+        <a data-aos="zoom-in-left" data-aos-delay="1200" href="/wedding faqs/faq.html" style="color: white;">FAQ's</a>
+    </nav>
+    
+    <div class="icons">
+        <div data-aos="zoom-in-left" data-aos-delay="1350"  id="theme-btn"></div>
+        <div data-aos="zoom-in-left" data-aos-delay="1500" class="fas fa-bars" id="menu"></div>
+    </div>
+    <div>
+        <i class="bi bi-person-circle" style="font-size: 24px; color: white; margin-right:100px ;"></i>
+
+          
+</div>
+
+</header>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1> The Tales of Tradition</h1>
+            <p>Discover the perfect package to transform your exclusive day into an extraordinary experience.</p> 
+            <br>
+            <br>
+               <ul class="breadcrumb">
+                <li><a href="/wedding/index.html">Home</a></li>
+                <li><a href="/portfolio/wedding/services.html">Services</a></li>
+                <li>Package</li>
+              </ul>
+        </div>
+    </div>
+
+    <h2 style="margin-left: 55px; margin-top: 50px;">Select Package</h2>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    Recommended for friends of the bride
+                </div>
+            </div>
+            <div class="card-body">
+                <h2>Tradition Silver Package</h2>
+                <div class="price">₹ 15,000/-</div>
+              
+                <div class="services">
+                    <p>Services :</p>
+                    <ul>
+                        <li>✔ Haldi Ceremony </li>
+                        <li>✔ Mehandi Ceremony</li>
+                        <li>✔ Ganesha puja</li>
+                        <li>✔ Tilak Ceremony</li>
+                        <li>✕ Roka Ceremony</li>
+                        <li>✕ Sangeet Ceremony</li>
+                        <li>✕ Engagment Ceremony</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    Recommended for close family
+                </div>
+            </div>
+            <div class="card-body">
+                <h2>Tradition Gold Package</h2>
+                <div class="price">₹ 30,000/-</div>
+              
+                <div class="services">
+                    <p>Services :</p>
+                    <ul>
+                        <li>✔ Engagment Ceremony</li>
+                        <li>✔ Sangeet Ceremony</li>
+                        <li>✔ Haldi Ceremony </li>
+                        <li>✔ Mehandi Ceremony</li>
+                        <li>✔ Tilak Ceremony</li>
+                        <li>✕ Ganesha puja</li>
+                        <li>✕ Roka Ceremony</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    Recommended for bride in small functions
+                </div>
+            </div>
+            <div class="card-body">
+                <h2>Tradition Diamond Package</h2>
+                <div class="price">₹ 45,000/-</div>
+               
+                <div class="services">
+                    <p>Services :</p>
+                    <ul>
+                        <li>✔ Engagment Ceremony</li>
+                        <li>✔ Sangeet Ceremony</li>
+                        <li>✔ Haldi Ceremony </li>
+                        <li>✔ Mehandi Ceremony</li>
+                        <li>✔ Tilak Ceremony</li>
+                        <li>✔ Ganesha puja</li>
+                        <li>✔ Roka Ceremony</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Image Section -->
+    <div class="latest-work-section">
+        <h2>Our latest work</h2>
+        <div class="album-tabs">
+            <button class="tab-button active">Album(06)</button>
+
+        </div>
+        <div class="album-container">
+            <div class="album-card">
+                <img src="engagement.avif" alt="Lucknow ChicSplash">
+                <div class="album-info">
+                    <h3>Engagement Ceremony</h3>
+                    <p>The Engagement Ceremony is a pre wedding ceremony and important part of wedding in many cultures</p>
+
+                </div>
+            </div>
+            <div class="album-card">
+                <img src="sangeet.avif" alt="Ludhiana Ki Beauty">
+                <div class="album-info">
+                    <h3>Sangeet Ceremony</h3>
+                    <p>A typical Sangeet ceremony involves music and dancing, typically in the form of a dance-off between the bride and groom's families.</p>
+
+                </div>
+            </div>
+            <div class="album-card">
+                <img src="haldi.jpg" alt="Dilli Di Kudiyan">
+                <div class="album-info">
+                    <h3> Haldi Ceremony</h3>
+                    <p>The Haldi Ceremony is a preparation ceremony, usually the day before the main wedding, and is usually at the couple's parental home.</p>
+
+                </div>
+            </div>
+            <div class="album-card">
+                <img src="mehandi.avif" alt="Nupur's Dulhan Dazzle">
+                <div class="album-info">
+                    <h3>Mehandi Ceremony</h3>
+                    <p>A Mehndi party is a night of fun with lots of food, music, and dancing. Traditionally, the bride would have intricate henna patterns applied to their hands and feet during the event.</p>
+
+                </div>
+            </div>
+            <div class="album-card">
+                <img src="tilak.avif" alt="Mayanka's FamilyGlam">
+                <div class="album-info">
+                    <h3>Tilak Ceremony</h3>
+                    <p>During the ceremony, the bride's father and groom's father exchange gifts, such as sugar, coconuts, rice, clothes, jewelry, and henna.</p>
+
+                </div>
+            </div>
+            <div class="album-card">
+                <img src="ganesh.jpg" alt="Koyli's Makeover">
+                <div class="album-info">
+                    <h3> Ganesha puja</h3>
+                    <p>The Ganesha Puja is performed by the Bride's parents, the ceremony begins by offering a prayer to Lord Ganesh requesting peace and harmony to prevail during the ceremony.</p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <section class="footer">
+
+        <div class="box-container">
+    
+          <div class="box" data-aos="fade-up">
+            <h3><img src="logo.png" style="height: 80px;"></h3>
+            <p>We are a team of experienced wedding planners dedicated to creating unforgettable weddings for our clients.</p>
+          </div>
+    
+          <div class="box" data-aos="fade-up">
+            <h3>Our Services</h3>
+              <a href="#"><i class="fas fa-chevron-right"></i> Full Wedding Planning</a>
+              <a href="#"><i class="fas fa-chevron-right"></i> Partial Wedding Planning</a>
+              <a href="#"><i class="fas fa-chevron-right"></i> Day-of Coordination</a>
+              <a href="#"><i class="fas fa-chevron-right"></i> Vendor Referrals</a>
+          </div>
+    
+          <div class="box" data-aos="fade-up">
+            <h3>Contact Us</h3>
+            <a href="#"><i class="fas fa-phone"></i> 123-595-5555</a>
+            <a href="#"><i class="fas fa-phone"></i> 555-555-5555</a>
+            <a href="#"><i class="fas fa-envelope"></i> info@weddingplanner.com</a>
+            <a href="#"><i class="fas fa-map"></i> 123 Main St, Anytown USA</a>
+          </div>
+    
+          <div class="box" data-aos="fade-up">
+            <h3>Follow Us</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+           
+          </div>
+          
+        </div>
+        <div style="color: white; background-color: #2B2A4C; font-size: 16px; text-align: center;"><p>&copy; copyright @ 2023 by weddingplanner</p></div>
+        
+      </footer>
+</body>
+</html>

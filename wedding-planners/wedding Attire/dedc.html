@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venue Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .left-column,
+        .right-column {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 48%;
+        }
+
+        .left-column img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .venue-details {
+            margin-top: 20px;
+        }
+
+        .venue-details h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .venue-details p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .rating span {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        /* .contact-button {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .contact-button button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-button .message-btn {
+            background-color: #ff4081;
+            color: #fff;
+        }
+        .contact-button .contact-btn {
+            background-color: #4caf50;
+            color: #fff;
+        } */
+        /* Basic reset for button */
+        .contact-btn {
+            background-color: #007bff;
+            /* Primary color */
+            color: white;
+            /* Text color */
+            border: none;
+            border-radius: 5px;
+            /* Rounded corners */
+            padding: 10px 20px;
+            /* Padding */
+            font-size: 16px;
+            /* Font size */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            /* Smooth transitions */
+        }
+
+        /* Button hover effect */
+        .contact-btn:hover {
+            background-color: #0056b3;
+            /* Darker shade of primary color */
+            transform: scale(1.1);
+            /* Slightly enlarge the button */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            /* Add shadow */
+        }
+
+        /* Animation on click */
+        .contact-btn:active {
+            transform: scale(0.9);
+            /* Slightly shrink the button */
+        }
+
+        /* Link styling to remove underline */
+        .contact-link {
+            text-decoration: none;
+            /* Remove underline from link */
+        }
+
+        .description,
+        .benefits {
+            margin-top: 20px;
+        }
+
+        .benefits ul {
+            padding-left: 20px;
+        }
+
+        .benefits li {
+            margin: 5px 0;
+        }
+
+        .form-section {
+            margin-top: 20px;
+        }
+
+        .form-section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-section input,
+        .form-section select {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-section button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(120deg, rgb(255, 0, 144), rgb(255, 0, 144) 55%, rgb(0, 222, 255), rgb(0, 222, 255) 45%);
+
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Basic styling for the button */
+        .availability-btn {
+            background-color: #28a745;
+            /* Primary color (green) */
+            color: white;
+            /* Text color */
+            border: none;
+            border-radius: 5px;
+            /* Rounded corners */
+            padding: 12px 24px;
+            /* Padding for size */
+            font-size: 16px;
+            /* Font size */
+            font-weight: bold;
+            /* Bold text */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            /* Smooth transitions */
+            outline: none;
+            /* Remove outline on focus */
+        }
+
+        /* Hover effect */
+        .availability-btn:hover {
+            background-color: #218838;
+            /* Darker shade of green */
+            transform: scale(1.05);
+            /* Slightly enlarge the button */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            /* Add shadow */
+        }
+
+        /* Active state */
+        .availability-btn:active {
+            transform: scale(0.95);
+            /* Slightly shrink the button */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Adjust shadow */
+        }
+
+        /* Focus state for accessibility */
+        .availability-btn:focus {
+            outline: 3px solid #80bdff;
+            /* Add a blue outline for focus */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-column">
+            <img src="img/img7.jpeg" alt="Venue">
+            <div class="venue-details">
+
+                <h1>The Fern Surya Resort, Kasauli Hills, Dharampur</h1>
+                <p>Formerly known as The Fern Surya Resort</p>
+                <p>Dharampur, Kasauli +5 more cities</p>
+                <div class="rating">
+                    <span>4.5</span>
+                    <p>1 review</p>
+                </div>
+                <a href="contactus.html" class="contact-link">
+                    <button class="contact-btn">View Contact</button>
+                </a>
+
+                <div class="description">
+                    <h1>Description:</h1>
+                    <p>The Fern Surya Resort offers a unique blend of luxury and tranquility amidst the scenic beauty of
+                        Kasauli Hills. Our resort features well-appointed rooms, state-of-the-art facilities, and
+                        exceptional service. Whether you're planning a wedding, a pre-wedding function, or a corporate
+                        event, our versatile venues are designed to cater to your every need. Enjoy the stunning views,
+                        serene environment, and top-notch amenities that make us the perfect destination for your
+                        special occasions. Experience the best of hospitality and comfort at The Fern Surya Resort,
+                        where every moment is crafted to perfection.</p>
+                </div>
+                <div class="benefits">
+                    <h3>Benefits:</h3>
+                    <ul>
+                        <li>Stunning hillside views</li>
+                        <li>Luxurious and comfortable accommodations</li>
+                        <li>State-of-the-art facilities</li>
+                        <li>Exceptional service and hospitality</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right-column">
+            <h2>Starting Price</h2>
+            <p>₹1,500 per plate (taxes extra) Veg price</p>
+            <p>₹1,700 per plate (taxes extra) Non Veg price</p>
+            <div class="form-section">
+                <form>
+                    <input type="text" placeholder="Full name" required>
+                    <input type="email" placeholder="Email address" required>
+                    <input type="date" placeholder="Function date" required>
+                    <input type="number" placeholder="No of guests (min 50)" required>
+                    <input type="number" placeholder="No of rooms">
+                    <select>
+                        <option value="pre-wedding">Pre-Wedding</option>
+                        <option value="wedding">Wedding</option>
+                    </select>
+                    <select>
+                        <option value="evening">Evening</option>
+                        <option value="day">Day</option>
+                    </select>
+                    <label>
+                        <input type="checkbox" checked> Notify me on WhatsApp
+                    </label>
+                    <button type="submit" class="availability-btn">Check Availability & Prices</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

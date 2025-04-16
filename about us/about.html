@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Party Supplies Website Development</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+        <link rel="stylesheet" type="text/css" href="owl.carousel.min.css">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> 
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- custom css link -->
+    <link rel="stylesheet" href="style.css">
+
+        <!-- Template Stylesheet -->
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+        
+         <!-- Customized Bootstrap Stylesheet -->
+         
+        
+         
+
+        
+    <style>
+
+
+/*** Spinner Start ***/
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+/*** Spinner End ***/
+
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    z-index: 99;
+}
+
+/*** Button Start ***/
+.btn {
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-sm-square {
+    width: 34px;
+    height: 34px;
+}
+
+.btn-md-square {
+    width: 44px;
+    height: 44px;
+}
+
+.btn-lg-square {
+    width: 56px;
+    height: 56px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-md-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 50%;
+}
+
+.btn.btn-primary {
+    box-shadow: inset 0 0 0 0 var(--bs-primary);
+}
+
+.btn.btn-primary:hover {
+    box-shadow: inset 300px 0 0 0 var(--bs-light) !important;
+    color: var(--bs-primary) !important;
+}
+
+.btn.btn-light {
+    box-shadow: inset 0 0 0 0 var(--bs-primary);
+}
+
+.btn.btn-light:hover {
+    box-shadow: inset 300px 0 0 0 var(--bs-primary);
+    color: var(--bs-light) !important;
+}
+
+.btn-hover {
+    transition: 0.5s;
+}
+
+.btn-hover:hover {
+    color: var(--bs-secondary) !important;
+}
+
+/*** Section Title Start ***/
+.section-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    color: var(--bs-primary);
+}
+
+.section-title::before {
+    content: "";
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    margin-right: -50px;
+    border: 1px solid var(--bs-primary) !important;
+}
+
+.section-title::after {
+    content: "";
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    margin-left: -50px;
+    border: 1px solid var(--bs-primary) !important;
+}
+
+
+/*** Topbar Start ***/
+.fixed-top .container {
+    transition: 0.5s;
+}
+
+.topbar {
+    padding: 2px 10px 2px 20px;
+    background: var(--bs-primary) !important;
+}
+
+.topbar a,
+.topbar a i {
+    transition: 0.5s;
+}
+
+.topbar a:hover,
+.topbar a i:hover {
+    color: var(--bs-secondary) !important;
+}
+
+
+@media (max-width: 768px) {
+    .topbar {
+        display: none;    
+    }
+}
+/*** Topbar End ***/
+
+
+/*** Navbar ***/
+.navbar-light .navbar-nav .nav-link {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    padding: 35px 15px;
+    color: var(--bs-white) !important;
+    font-size: 17px;
+    font-weight: 400;
+    outline: none;
+    transition: .5s;
+}
+
+.sticky-top.navbar-light .navbar-nav .nav-link {
+    padding: 20px 15px;
+    color: var(--bs-dark) !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--bs-white) !important;
+}
+
+.navbar-light .navbar-brand h1 {
+    color: var(--bs-white);
+}
+
+.sticky-top.navbar-light .navbar-brand h1 {
+    color: var(--bs-primary);
+}
+
+.navbar-light .navbar-brand img {
+    max-height: 60px;
+    transition: .5s;
+   
+}
+
+.sticky-top.navbar-light .navbar-brand img {
+    max-height: 45px;
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+@media (min-width: 1200px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+        border: 0;
+        border-radius: 10px;
+        transition: .5s;
+        opacity: 0;
+    }
+}
+
+.dropdown .dropdown-menu a:hover {
+    background: var(--bs-primary);
+    color: var(--bs-white);
+}
+
+.navbar .nav-item:hover .dropdown-menu {
+    transform: rotateX(0deg);
+    visibility: visible;
+    background: var(--bs-light);
+    transition: .5s;
+    opacity: 1;
+}
+
+@media (max-width: 991.98px) {
+    .sticky-top.navbar-light {
+        position: relative;
+        background: var(--bs-white);
+    }
+
+    .navbar-light .navbar-brand h1 {
+        color: var(--bs-primary);
+    }
+
+    .navbar.navbar-expand-lg .navbar-toggler {
+        padding: 10px 20px;
+        border: 1px solid var(--bs-primary);
+        color: var(--bs-primary);
+    }
+
+    .navbar-light .navbar-collapse {
+        margin-top: 15px;
+        border-top: 1px solid #DDDDDD;
+    }
+
+    .navbar-light .navbar-nav .nav-link,
+    .sticky-top.navbar-light .navbar-nav .nav-link {
+        padding: 10px 0;
+        color: var(--bs-dark) !important;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover,
+    .navbar-light .navbar-nav .nav-link.active  {
+        color: var(--bs-primary) !important;
+    }
+
+    .navbar-light .navbar-brand img {
+        max-height: 45px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-light {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+        z-index: 999;
+    }
+    
+    .sticky-top.navbar-light {
+        position: fixed;
+        background: var(--bs-light);
+    }
+
+    .navbar-light .navbar-nav .nav-link::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 0;
+        bottom: -1px;
+        left: 0;
+        background: #c61717;
+        transition: .5s;
+        z-index: -1;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover::before,
+    .navbar-light .navbar-nav .nav-link.active::before {
+        height: calc(100% + 1px);
+        left: 1px;
+    }
+
+    .navbar-light .navbar-nav .nav-link.nav-contact::before {
+        display: none;
+    }
+}
+
+
+
+        .navbar-nav .fa-shopping-cart {
+    font-size: 1.5rem; /* Adjust size as needed */
+    color: #000; /* Adjust color to match your theme */
+    transition: color 0.3s;
+}
+
+.navbar-nav .fa-shopping-cart:hover {
+    color: #f2f2f2; /* Darker shade on hover */
+}
+.wrapper {
+      background-color: #f9f9f9;
+      padding: 70px 0;
+    height: 500px;
+      /* height: 500px; */
+    }
+
+    .sectiontitle {
+      text-align: center;
+      margin-bottom: 40px;
+      /* height: 500px;
+  width: 200px; */
+    }
+
+    .sectiontitle p {
+      color: #777;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .sectiontitle h6 {
+      font-size: 28px;
+      font-weight: 600;
+      margin: 10px 0 0;
+    }
+    .team .team-item {
+    position: relative;
+    background: var(--bs-primary);
+    border-radius: 10px;
+}
+
+.team .team-item::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background: var(--bs-dark);
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.team .team-item:hover:after {
+    height: 100%;
+}
+
+.team .team-item .team-content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+.team .team-item .team-content .team-icon {
+    background: var(--bs-light);
+    border-radius: 10px;
+    display: flex;
+    display: inline-flex;
+}
+
+.team .team-item .team-content h4,
+.team .team-item .team-content p {
+    transition: 0.5s;
+}
+
+.team .team-item:hover .team-content h4 {
+    color: var(--bs-primary);
+}
+
+.team .team-item .team-content p {
+    color: var(--bs-white);
+    transition: 0.5s;
+}
+
+.team .team-item:hover .team-content p {
+    color: var(--bs-body);
+}
+.container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+        .media-mentions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .media-item {
+            position: relative;
+            flex: 1 1 calc(33% - 20px);
+            min-width: 250px;
+            max-width: 300px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+        .media-item h2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .media-item:hover h2 {
+            opacity: 1;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <header class="header">
+
+        <a data-aos="zoom-in-left" data-aos-delay="150" href="#" class="logo"> <img src="logo.png" style="height: 80px; margin-left: 50px;"></a>
+    
+        <nav class="navbar" >
+            <a data-aos="zoom-in-left" data-aos-delay="300" href="/wedding/index.html" style="color: white;">Home</a>
+            <a data-aos="zoom-in-left" data-aos-delay="450" href="/portfolio/wedding/services.html" style="color: white;">Service</a>
+            <a data-aos="zoom-in-left" data-aos-delay="600" href="/portfolio/wedding/Portfolio.html" style="color: white;">Portfolio</a>
+            <a data-aos="zoom-in-left" data-aos-delay="750" href="/about us/about.html" style="color: white;">About</a>
+            <a data-aos="zoom-in-left" data-aos-delay="900" href="/contact/contact.html" style="color: white;">Contact</a>
+            <a data-aos="zoom-in-left" data-aos-delay="1050" href="/blogs/blog.html" style="color: white;">Blog</a>
+            <a data-aos="zoom-in-left" data-aos-delay="1200" href="/wedding faqs/faq.html" style="color: white;">FAQ's</a>
+        </nav>
+        
+        <div class="icons">
+            <div data-aos="zoom-in-left" data-aos-delay="1350"  id="theme-btn"></div>
+            <div data-aos="zoom-in-left" data-aos-delay="1500" class="fas fa-bars" id="menu"></div>
+        </div>
+        <div>
+            <i class="bi bi-person-circle" style="font-size: 24px; color: white; margin-right:100px ;"></i>
+    
+              
+    </div>
+    
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+ <!-- About Start -->
+ <div class="container-fluid about pb-5">
+    <div class="container pb-5">
+        <div class="row g-5">
+            <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.2s">
+                <div>
+                    <br><br>
+                    <h4 class="display-5 mb-4" style="color:#B31312">About Us</h4>
+                    <br>
+                    <h1 class="display-5 mb-4">Wedding Planner</h1>
+                    <p class="mb-5">Welcome to wedding planner, where your dream wedding becomes a reality.Our company started with a passion for turning dreams into unforgettable events. With over [Number] years of experience, we have become a trusted name in the wedding planning industry, known for our meticulous attention to detail and personalized service. Our journey began with a simple idea: to create magical moments that reflect the unique love stories of each couple we work with. Today, we proudly continue that tradition, delivering exceptional weddings that leave lasting memories.
+                    </p>
+                    <h1 class="display-5 mb-4">Our Commitment:</h1>
+                    <p>our success is built on a foundation of trust, creativity, and passion. We take pride in our ability to blend modern trends with timeless elegance, ensuring that every wedding is a perfect reflection of our clients’ personal style and story. Our team of dedicated professionals works tirelessly to handle every detail, allowing couples to enjoy their special day without a hint of stress.</p>
+                </div>
+            </div>
+            <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="position-relative rounded">
+                    <div class="rounded" style="margin-top: 40px;">
+                        <div class="row g-0">
+                            <div class="col-lg-12">
+                                <div class="rounded mb-4">
+                                    <img src="about img.jpeg" class="img-fluid rounded w-100" alt="">
+                                </div>
+                                <div class="row gx-4 gy-0">
+                                    <div class="col-6">
+                                        <div class="counter-item  rounded text-center p-4 h-100" style="background-color:mediumslateblue">
+                                            <div class="counter-item-icon mx-auto mb-3">
+                                                <i class="fas fa-thumbs-up fa-3x text-white"></i>
+                                            </div>
+                                            <div class="counter-counting mb-3">
+                                                <span class="text-white fs-2 fw-bold" data-toggle="counter-up">150</span>
+                                                <span class="h1 fw-bold text-white">K +</span>
+                                            </div>
+                                            <h5 class="text-white mb-0" >Happy Visitors</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="counter-item bg-dark rounded text-center p-4 h-100">
+                                            <div class="counter-item-icon mx-auto mb-3">
+                                                <i class="fas fa-certificate fa-3x text-white"></i>
+                                            </div>
+                                            <div class="counter-counting mb-3">
+                                                <span class="text-white fs-2 fw-bold" data-toggle="counter-up">122</span>
+                                                <span class="h1 fw-bold text-white"> +</span>
+                                            </div>
+                                            <h5 class="text-white mb-0">Awards Winning</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="rounded  p-4 position-absolute d-flex justify-content-center" style="width: 90%; height: 80px; top: -40px; left: 50%; transform: translateX(-50%); background-color:mediumslateblue">
+                        <h3 class="mb-0 text-white">20 Years Experience</h3>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+
+        
+
+        <!-- Attractions Start --><h4 class="display-5  mb-4" style="color:maroon; margin-left: 500px;">OUR MISSION</h4>
+        <div class="container-fluid attractions py-5" style="background-image:url(mission.jpg); animation-name: image-zoom; background-size: cover;">
+            <div class="container attractions-section py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 1500px;">
+                    
+                    <p class="text-white mb-0" style="margin-right: 250px; margin-left: 150px; width: 900px;">At wedding planner, our mission is to provide a seamless and stress-free wedding planning experience. We are dedicated to crafting personalized celebrations that capture the essence of each couple’s love story. Our team of experts is committed to delivering exceptional service, ensuring that every detail is perfectly executed and every moment is cherished.
+                    </p>
+                    <p class="text-white mb-0" style="margin-right: 250px; margin-left: 150px;  width: 900px;">We believe that every couple is unique, and so should be their wedding. Our mission is to tailor every aspect of your celebration to reflect your individual style and preferences. From the initial consultation to the final send-off, we work closely with you to understand your dreams and aspirations, turning them into a wedding that is truly one-of-a-kind.
+                    </p>
+                    
+                </div>
+                <div class="owl-carousel attractions-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="attractions-item wow fadeInUp" data-wow-delay="0.2s">
+                        <img src="M1.h" class="img-fluid rounded w-100" alt="" style="height: 170px;">
+                    </div>
+                    <div class="attractions-item wow fadeInUp" data-wow-delay="0.4s">
+                        <img src="M2.jpg" class="img-fluid rounded w-100" alt="">
+                    </div>
+                    <div class="attractions-item wow fadeInUp" data-wow-delay="0.6s">
+                        <img src="M3.jpeg" class="img-fluid rounded w-100" alt="">
+                    </div>
+                    <div class="attractions-item wow fadeInUp" data-wow-delay="0.8s">
+                        <img src="M4.webp" class="img-fluid rounded w-100" alt="">
+                    </div>
+                    <div class="attractions-item wow fadeInUp" data-wow-delay="1s">
+                        <img src="M5.jpg" class="img-fluid rounded w-100" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Attractions End -->
+
+<br>
+<br>
+<br>
+       <!-- Testimonial Start -->
+       <h4 class="display-5  mb-4" style="color: maroon; margin-left: 500px; ">Our Vission</h4>
+       <div class="container-fluid attractions py-5" style="background-image:url(about2.webp); animation-name: image-zoom; background-size: cover;">
+        <div class="container py-5" >
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s" ">
+                <div class="testimonial-item p-4">
+                    <p style="color: white; font-size: 20px;">Our Vission Party Supplies is dedicated to transforming every celebration into an unforgettable experience. We believe that parties are more than just gatherings; they are moments to create lasting memories, express joy, and bring people closer together. Our mission is to provide the highest quality, innovative, and trendy party supplies that cater to all occasions, from intimate gatherings to grand events.
+                    </p>
+                    <p style="color: white;  font-size: 20px;" >
+                        At Our Vission Party Supplies, we are passionate about delivering products that inspire creativity and fun. We source unique decorations, vibrant balloons, stylish tableware, and delightful party favors that make every event stand out. Our commitment to excellence ensures that each product is crafted with attention to detail and safety, guaranteeing a seamless party planning experience for our customers.
+
+                    </p>
+                    
+                    
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+<!-- Team End -->
+
+        <!-- Team Start -->
+        <div class="container-fluid team pb-5">
+            <div class="container pb-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <br><br>
+                    <h4 class="display-5 mb-4" style="color: chocolate">Meet Our Team</h4>
+                </div>
+                <div class="row g-4 justify-content-center" style="background-color:grey;">
+                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s" >
+                        <div class="team-item p-4" > 
+                            <div class="team-content">
+                                <div class="d-flex justify-content-between border-bottom pb-4">
+                                    <div class="text-start">
+                                        <h4 class="mb-0">David James</h4>
+                                        <p class="mb-0">Lead Planner</p>
+                                    </div>
+                                    <div>
+                                        <img src="team-1.jpg" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">
+                                    </div>
+                                </div>
+                                <div>
+
+                                </div>
+                                <!-- <div class="team-icon rounded-pill my-4 p-3">
+                                    <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-circle me-0" href=""><i class="fab fa-instagram"></i></a>
+                                </div> -->
+                                <p class="text-center mb-0">David Games brings over a decade of experience to the team. Known for her keen eye for design and impeccable organizational skills, Jane ensures that every wedding she plans is executed flawlessly. Her passion for creating beautiful, personalized celebrations shines through in every detail.  </p>
+                                   <br>
+                                <div style="background-color:white; border-radius: 10px;" >
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-twitter"style="margin-left: 15px;"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in" style="margin-left: 15px;"></i></a>
+                                    <a href=""><i class="fab fa-instagram" style="margin-left: 15px;"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="team-item p-4">
+                            <div class="team-content">
+                                <div class="d-flex justify-content-between border-bottom pb-4">
+                                    <div class="text-start">
+                                        <h4 class="mb-0">William John</h4>
+                                        <p class="mb-0">Coordinator</p>
+                                    </div>
+                                    <div>
+                                        <img src="team-2.jpg" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">
+                                    </div>
+                                </div>
+                                <!-- <div class="team-icon rounded-pill my-4 p-3">
+                                    <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-circle me-0" href=""><i class="fab fa-instagram"></i></a>
+                                </div> -->
+                                <p class="text-center mb-0">Williom Johnis the mastermind behind our seamless event coordination. With a talent for managing logistics and a knack for problem-solving, John ensures that every wedding runs smoothly from start to finish. His dedication to excellence and calm demeanor make him an invaluable asset to our team.
+                                </p>
+                                <br>
+                                <div style="background-color:white; border-radius: 10px;" >
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-twitter"style="margin-left: 15px;"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in" style="margin-left: 15px;"></i></a>
+                                    <a href=""><i class="fab fa-instagram" style="margin-left: 15px;"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="team-item p-4">
+                            <div class="team-content">
+                                <div class="d-flex justify-content-between border-bottom pb-4">
+                                    <div class="text-start">
+                                        <h4 class="mb-0">Michael John</h4>
+                                        <p class="mb-0">Profession</p>
+                                    </div>
+                                    <div>
+                                        <img src="team-3.jpg" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">
+                                    </div>
+                                </div>
+                                <!-- <div class="team-icon rounded-pill my-4 p-3">
+                                    <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-circle me-0" href=""><i class="fab fa-instagram"></i></a>
+                                </div> -->
+                                <p class="text-center mb-0">Michael John is the Inventory Specialist for our events team. With a strong background in inventory management and tracking, Michael ensures that all supplies are accounted for and properly stored. He is responsible for monitoring stock levels.With a strong background in inventory management
+                                </p>
+                                <br>
+                                <div style="background-color:white; border-radius: 10px;" >
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-twitter"style="margin-left: 15px;"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in" style="margin-left: 15px;"></i></a>
+                                    <a href=""><i class="fab fa-instagram" style="margin-left: 15px;"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Team End -->
+        <div class="container">
+            <h1 style="font-size: 50px;">MEDIA & AWARDS</h1>
+            <h1>DIGITAL</h1>
+            <div class="media-mentions">
+                <div class="media-item">
+                    <img src="article 2.jfif" alt="Epic Luxury Weddings: Interview">
+                    <h2 style="font-size: 16px;">Epic Luxury Weddings: Interview</h2>
+                </div>
+                <div class="media-item">
+                    <img src="article 1.jfif" alt="Indian Express : INDULGE">
+                    <h2 style="font-size: 16px;">Indian Express :: INDULGE</h2>
+                </div>
+                <div class="media-item">
+                    <img src="article 3.jfif" alt="Ivory Station">
+                    <h2 style="font-size: 16px;">Ivory Station</h2>
+                </div>
+                <div class="media-item">
+                    <img src="article 4.jfif" alt="Future Of Wedding Business, Decor And Fashion By Prerana Agarwal Saxena">
+                    <h2 style="font-size: 16px;">Times of India</h2>
+                </div>
+                <div class="media-item">
+                    <img src="article 5.jfif" alt="Professionally Speaking: Event Planners And Designers">
+                    <h2 style="font-size: 16px;">Peacock Magazine</h2>
+                </div>
+                <div class="media-item">
+                    <img src="article 6.jfif" alt="Wedding Wire">
+                    <h2 style="font-size: 16px;">Everything Experiential </h2>
+                </div>
+            </div>
+        </div>
+          <section class="footer">
+
+    <div class="box-container">
+
+      <div class="box" data-aos="fade-up">
+        <h3><img src="logo.png" style="height: 80px; margin-left: 80px;"></h3>
+        <p>We are a team of experienced wedding planners dedicated to creating unforgettable weddings for our clients.</p>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+        <h3>Our Services</h3>
+          <a href="#"><i class="fas fa-chevron-right"></i> Full Wedding Planning</a>
+          <a href="#"><i class="fas fa-chevron-right"></i> Partial Wedding Planning</a>
+          <a href="#"><i class="fas fa-chevron-right"></i> Day-of Coordination</a>
+          <a href="#"><i class="fas fa-chevron-right"></i> Vendor Referrals</a>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+        <h3>Contact Us</h3>
+        <a href="#"><i class="fas fa-phone"></i> 123-595-5555</a>
+        <a href="#"><i class="fas fa-phone"></i> 555-555-5555</a>
+        <a href="#"><i class="fas fa-envelope"></i> info@weddingplanner.com</a>
+        <a href="#"><i class="fas fa-map"></i> 123 Main St, Anytown USA</a>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+        <h3>Follow Us</h3>
+        <a href="https://www.facebook.com/"> <i class="fab fa-facebook-f"></i> facebook </a>
+        <a href="https://x.com/i/flow/login?lang=en"> <i class="fab fa-twitter"></i> twitter </a>
+        <a href="https://www.instagram.com/accounts/login/?hl=en"> <i class="fab fa-instagram"></i> instagram </a>
+        <a href=" https://analytics.pinterest.com/"> <i class="fab fa-pinterest"></i> pinterest </a>
+       
+      </div>
+      
+    </div>
+    <div style="color: white; background-color: #2B2A4C; font-size: 16px; text-align: center;"><p>&copy; copyright @ 2023 by weddingplanner</p></div>
+    
+  </footer>
+
+       
+
+        
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script copy.js"></script>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    </body>
+
+</html>

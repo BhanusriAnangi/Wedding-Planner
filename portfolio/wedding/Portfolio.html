@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- custom css link -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .gallery .gallery-slider .swiper-slide {
+            overflow: hidden;
+            border-radius: .5rem;
+            height: 50rem;
+            width: 35rem;
+        }
+
+        .gallery .gallery-slider .swiper-slide img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            margin-left: 10%;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            flex: 1 0 33.33%;
+            /* Each slide takes up 1/3 of the container */
+            box-sizing: border-box;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .slide:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        button1 {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .prev {
+            left: 10px;
+
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .date {
+            font-size: 0.9em;
+            color: grey;
+        }
+        .location{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+        }
+       .location, li{
+            list-style: none;
+        }
+        .car1{
+            border: 0px solid black;
+            box-shadow: 1px 1px 1px 1px rgb(0, 255, 221);
+            gap: 20px;
+            width: 150px;
+            justify-content: space-between;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 80px;
+            font-size: 15px;
+        }
+        .locations, a li{
+           font-weight: bold;
+           font-size: 20px;
+           text-align: center;
+        }
+        .celebrations{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+        }
+        .celebration{
+            border: 0px solid black;
+            box-shadow: 1px 1px 1px 1px rgb(151, 72, 229);
+            gap: 20px;
+            width: 200px;
+            justify-content: space-between;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 80px;
+            border-radius: 10px;
+        }
+          .celebration, h5{
+            margin-top: 10px;
+          }
+    </style>
+</head>
+
+<body>
+
+    <!-- header section starts -->
+
+    <header class="header">
+
+        <a data-aos="zoom-in-left" data-aos-delay="150" href="#" class="logo"> <img src="logo.png"
+                style="height: 80px; margin-left: 50px;"></a>
+
+        <nav class="navbar">
+            <a data-aos="zoom-in-left" data-aos-delay="300" href="/wedding/index.html" style="color: white;">Home</a>
+            <a data-aos="zoom-in-left" data-aos-delay="450" href="/portfolio/wedding/services.html" style="color: white;">Service</a>
+            <a data-aos="zoom-in-left" data-aos-delay="600" href="/portfolio/wedding/Portfolio.html" style="color: white;">Portfolio</a>
+            <a data-aos="zoom-in-left" data-aos-delay="750" href="/about us/about.html" style="color: white;">About</a>
+            <a data-aos="zoom-in-left" data-aos-delay="900" href="/contact/contact.html" style="color: white;">Contact</a>
+            <a data-aos="zoom-in-left" data-aos-delay="1050" href="/blogs/blog.html" style="color: white;">Blog</a>
+            <a data-aos="zoom-in-left" data-aos-delay="1200" href="/wedding faqs/faq.html" style="color: white;">FAQ's</a>
+        </nav>
+
+        <div class="icons">
+            <div data-aos="zoom-in-left" data-aos-delay="1350" id="theme-btn"></div>
+            <div data-aos="zoom-in-left" data-aos-delay="1500" class="fas fa-bars" id="menu"></div>
+        </div>
+        <div>
+            <i class="bi bi-person-circle" style="font-size: 24px; color: white; margin-right:100px ;"></i>
+
+
+        </div>
+
+    </header>
+
+    <section class="gallery" id="gallery">
+
+        <h1 class="heading" style="margin-top: 100px;"> our gallery</h1>
+
+        <div class="swiper gallery-slider" data-aos="fade-up">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="wedding1.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="wedding2.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="wedding3.jpeg" alt=""></div>
+                <div class="swiper-slide"><img src="wedding4.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="wedding5.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="wedding6.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="wedding7.jpg" alt=""></div>
+            </div>
+        </div>
+
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <div>
+        <div class="big-cont d-flex flex-row; margin-top: 50px;">
+            <div class="inner-column clearfix">
+                <div class="image wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <img decoding="async" src="one.jpg" alt="Awesome Image">
+                </div>
+                <div class="image-two wow fadeInRight" data-wow-delay="150ms" data-wow-duration="1500ms">
+                    <img decoding="async" src="two.jpg" alt="Awesome Image">
+                </div>
+                <div class="image-three wow fadeInRight" data-wow-delay="450ms" data-wow-duration="1500ms">
+                    <img decoding="async" src="three.jpg" alt="Awesome Image">
+                </div>
+                <div class="image-four wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <img decoding="async" src="four.jpg" alt="Awesome Image">
+                </div>
+            </div>
+
+
+
+            <div style="text-align: center; margin-top: 50px; padding:40px;">
+                <h2>Wedding Planners</h2>
+                <p><b style="text-decoration: underline;">Insights:</b> We use 4k sony HDR-Mc500 camera,5D lens and
+                    drones in every wedding to capture moments.Wedding videography takes the raw footage and transforms
+                    it into an emotional journey. It weaves together moments, emotions, and details in a way that
+                    transcends mere documentation, making the viewer feel like a part of the narrative </p>
+                <br>
+                <br>
+                <p><b style="text-decoration: underline;">News:</b> When its all said and done, the photos and videos
+                    are often the only mementos you have from a wedding day,” says Lindsey Conklin of Le Rêve Films.
+                    “Wedding videography should not be considered a luxury. Not hiring a videographer is often the
+                    biggest regret couples have after a wedding</p>
+            </div>
+        </div>
+    </div>
+
+<h1 style="text-align: center; margin-top: 20px;">Locations</h1>
+
+    
+<select id="locationFilter" onchange="filterLocations()" style="font-size: 20px;">
+    <option value="all">All Locations</option>
+    <option value="hyderabad">Hyderabad</option>
+    <option value="goa">Goa</option>
+    <option value="kerala">Kerala</option>
+    <option value="mysore">Mysore</option>
+</select>
+<div class="car">
+<div class="location" id="locations">
+    <div class="car1" data-city="hyderabad">
+        <a href="#">Hyderabad</a>
+        <div class="location-details">
+            <ul>
+                <li>Kukatpally</li>
+                <li>Secunderabad</li>
+                <li>Shamshabad</li>
+                <li>Ameerpet</li>
+                <li>Medchal</li>
+                <li>Shamirpet</li>
+                <li>Moinabad</li>
+                <li>More</li>
+            </ul>
+        </div>
+    </div>
+    <div class="car1" data-city="goa">
+        <a href="#">Goa</a>
+        <div class="location-details">
+            <ul>
+                <li>South Goa</li>
+                <li>North Goa</li>
+                <li>Ponda</li>
+                <li>Calangute</li>
+                <li>Panjim</li>
+                <li>Baga</li>
+                <li>Colvale</li>
+                <li>More</li>
+            </ul>
+        </div>
+    </div>
+    <div class="car1" data-city="kerala">
+        <a href="#">Kerala</a>
+        <div class="location-details">
+            <ul>
+                <li>Cherai</li>
+                <li>Edappally</li>
+                <li>Kadavanthra</li>
+                <li>Maradu</li>
+                <li>Fort Kochi</li>
+                <li>Thrippunithura</li>
+                <li>Vyttila</li>
+                <li>More</li>
+            </ul>
+        </div>
+    </div>
+    <div class="car1" data-city="mysore">
+        <a href="#">Mysore</a>
+        <div class="location-details">
+            <ul>
+                <li>Bannimantap</li>
+                <li>Bhogadi</li>
+                <li>Chamrajpura</li>
+                <li>Kuvempu Nagar</li>
+                <li>Lakshmipuram</li>
+                <li>Nazarbad</li>
+                <li>Rajarajeshwari Nagar</li>
+                <li>More</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<h1 style="text-align: center; margin-top: 20px;">Types</h1>
+
+<select id="typeFilter" onchange="filterTypes()" style="font-size: 20px;">
+    <option value="all">All Types</option>
+    <option value="weddings">Weddings</option>
+    <option value="birthdays">Birthdays</option>
+    <option value="photoshoots">Photo Shoots</option>
+    <option value="makeup">Makeup</option>
+</select>
+
+<div class="celebrations" id="celebrations">
+    <div class="celebration" data-type="weddings">
+        <div class="fun1">
+            <img src="car.jpg" alt="" style=" width: 200px; border-radius: 10px;">
+            <h5>Weddings</h5>
+        </div>
+    </div>
+    <div class="celebration" data-type="birthdays">
+        <div class="fun1">
+            <img src="car1.jpg" alt="" style=" width: 200px; border-radius: 10px;">
+            <h5>Birthdays</h5>
+        </div>
+    </div>
+    <div class="celebration" data-type="photoshoots">
+        <div class="fun1">
+            <img src="car2.jpg" alt="" style="height: 300px; width: 200px; border-radius: 10px;">
+            <h5>Photo Shoots</h5>
+        </div>
+    </div>
+    <div class="celebration" data-type="makeup">
+        <div class="fun1">
+            <img src="car4.jpg" alt="" style=" width: 200px; border-radius: 10px;">
+            <h5>Makeup</h5>
+        </div>
+    </div>
+</div>
+
+
+    <div class="carousel-container">
+        <h1 style=" text-align: center;
+    color:var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+    font-size: 4rem;
+    margin-top: 2rem;">Real Wedding Stories</h1>
+        <br>
+        <br>
+        <br>
+        <div class="carousel" style="font-family: 'Poppins', sans-serif; font-size: 12px;">
+            <button1 class="prev" onclick="moveSlide(-1)">&#10094;</button1>
+            <div class="slides">
+                <div class="slide">
+                    <img src="review1.webp" alt="Wedding 1" style="height: 200px;">
+                    <h3> Simran and Hamit</h3>
+                    <p>Our jaws dropped when we saw this one! We come across a lot of weddings, especially pastel ones
+                        here at WedMeGood, but this one caught our eye in particular. Simran and Hamit's Anand Karaj
+                        seemed just like out of a dream. </p>
+                    <p class="date">26 April 2024</p>
+                </div>
+                <div class="slide">
+                    <img src="r.jpeg" alt="Wedding 2">
+                    <h3>Pragna and Sahil</h3>
+                    <p>Looking for a destination intimate wedding with a whimsical vibe? Then consider Mussoorie! These
+                        two doctors got married in this pretty setting- and we are in awe of this wedding. It was a
+                        pastel day wedding done right.. </p>
+                    <p class="date">04 February 2024</p>
+                </div>
+                <div class="slide">
+                    <img src="review3.jpg" alt="Wedding 3">
+                    <h3>Anuroopa & Vishal</h3>
+                    <p>Weddings with an all-white aesthetic do not seem to be going anywhere, and are still trending
+                        hard! Here is another one from the beautiful shores of Thailand, which checked all the boxes!
+                        Not only was the wedding a dreamy one. </p>
+                    <p class="date">10 December 2023</p>
+                </div>
+                <div class="slide">
+                    <img src="review4.jpg" alt="Wedding 1">
+                    <h3>Dr Aparna and Dr Rohit</h3>
+                    <p>Now here was a South Indian wedding that was different! Dr Aparna and Dr Rohit planned their
+                        destination wedding in Rajasthan, and had not one, but 2 beautiful wedding ceremonies at the
+                        palatial venue. The decor was elegant and tasteful, and the bride made quite the entry at both
+                        the weddings. </p>
+                    <p class="date">26 April 2024</p>
+                </div>
+                <div class="slide">
+                    <img src="review5.jpg" alt="Wedding 2">
+                    <h3>Pragna and Sahil</h3>
+                    <p>When you're a couple trying to plan your wedding in India, it's challenging enough to do it
+                        without a planner. But when the bride and the groom are in two separate countries themselves,
+                        then imagine how hard it can be! Kudos to Shivani and Mayank for planning their Delhi wedding
+                        themselves, and we love how personalised it was!</p>
+                    <p class="date">04 February 2024</p>
+                </div>
+                <div class="slide">
+                    <img src="review6.avif" alt="Wedding 3">
+                    <h3>DeepVeer & Anand Karaj</h3>
+                    <p>2 weddings- an Anand Karaj and a White Wedding, pretty, understated decor, beautiful outfits and
+                        gorgeous bridal looks. This Bhopal wedding reminded us a lot of the DeepVeer wedding, especially
+                        with the couple portraits and the bride in a classic red Sabyasachi lehenga. The wedding was
+                        held at the bride's hometown.</p>
+                    <p class="date">10 December 2023</p>
+                </div>
+            </div>
+            <button1 class="next" onclick="moveSlide(1)">&#10095;</button1>
+        </div>
+    </div>
+
+
+
+    <section class="footer" style="margin-top: 60px;">
+
+        <div class="box-container">
+
+            <div class="box" data-aos="fade-up">
+                <h3><img src="logo.png" style="height: 80px; margin-left: 55%;"></h3>
+                <p>We are a team of experienced wedding planners dedicated to creating unforgettable weddings for our
+                    clients.</p>
+            </div>
+
+            <div class="box" data-aos="fade-up">
+                <h3 style="margin-left: 0px;">Our Services</h3>
+                <a href="#"><i class="fas fa-chevron-right"></i> Full Wedding Planning</a>
+                <a href="#"><i class="fas fa-chevron-right"></i> Partial Wedding Planning</a>
+                <a href="#"><i class="fas fa-chevron-right"></i> Day-of Coordination</a>
+                <a href="#"><i class="fas fa-chevron-right"></i> Vendor Referrals</a>
+            </div>
+
+            <div class="box" data-aos="fade-up">
+                <h3 style="margin-left: 0px;">Contact Us</h3>
+                <a href="#"><i class="fas fa-phone"></i> 123-595-5555</a>
+                <a href="#"><i class="fas fa-phone"></i> 555-555-5555</a>
+                <a href="#"><i class="fas fa-envelope"></i> info@weddingplanner.com</a>
+                <a href="#"><i class="fas fa-map"></i> 123 Main St, Anytown USA</a>
+            </div>
+
+            <div class="box" data-aos="fade-up">
+                <h3 style="margin-left: 0px;">Follow Us</h3>
+                <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+                <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+                <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+                <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+
+            </div>
+
+        </div>
+        <div style="color: white; background-color: #2B2A4C; font-size: 16px; text-align: center;">
+            <p>&copy; copyright @ 2023 by weddingplanner</p>
+        </div>
+
+        </footer>
+        <script>
+             function filterLocations() {
+            let select = document.getElementById('locationFilter');
+            let filter = select.value;
+            let locations = document.getElementById('locations');
+            let locationDivs = locations.getElementsByClassName('car1');
+        
+            for (let i = 0; i < locationDivs.length; i++) {
+                let city = locationDivs[i].getAttribute('data-city');
+                if (filter === 'all' || city === filter) {
+                    locationDivs[i].style.display = "";
+                } else {
+                    locationDivs[i].style.display = "none";
+                }
+            }
+        }
+        
+        function filterTypes() {
+            let select = document.getElementById('typeFilter');
+            let filter = select.value;
+            let celebrations = document.getElementById('celebrations');
+            let celebrationDivs = celebrations.getElementsByClassName('celebration');
+        
+            for (let i = 0; i < celebrationDivs.length; i++) {
+                let type = celebrationDivs[i].getAttribute('data-type');
+                if (filter === 'all' || type === filter) {
+                    celebrationDivs[i].style.display = "";
+                } else {
+                    celebrationDivs[i].style.display = "none";
+                }
+            }
+        }
+        </script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="script.js"></script>
+        <script src="index.js"></script>
+</body>
+
+</html>

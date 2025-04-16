@@ -1,0 +1,207 @@
+.one{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+   justify-content: center;
+    background:url(wedding1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 90px;
+}
+h1{
+    font-size: 50px;
+   
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #F1F4FD;
+}
+.container1{
+    max-width: 1200px;
+    width:95%;
+}
+
+.slider-wrapper .image-list {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(6, 1fr); 
+    font-size: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-top: 20px;
+    margin-bottom:30px ;
+    margin-left: 30px;
+}
+
+.slider-wrapper .image-list ::-webkit-scrollbar{
+    display: none;
+}
+.slider-wrapper .image-list .image-item{
+    width: 325px;
+    height: 400px;
+    object-fit: cover;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+   
+}
+
+.container a{
+    color: black;
+}
+.service {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin-left: 10%;
+    cursor: pointer;
+
+}
+
+.service .text-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.service .text-content h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+}
+
+.service .text-content p {
+    margin: 0;
+    color: #555;
+}
+.dropdown-content {
+    display: none;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* margin-bottom: -400px; */
+    border-radius: 8px;
+    gap: 5px;
+    font-size: 15px;
+    position: absolute;
+   
+
+}
+
+.dropdown-item {
+    margin-bottom: 10px;
+    color: #555;
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
+   
+
+}
+.service .image-content {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    height: 100px;
+    max-width: 150px;
+    border-radius: 30px;
+    margin-right: -20px;
+}
+
+.service:nth-child(1) .image-content {
+    background-color: #e0e7ff;
+}
+
+.service:nth-child(2) .image-content {
+    background-color: #ffecd1;
+}
+
+.service:nth-child(3) .image-content {
+    background-color: #fce4ec;
+}
+
+.service:nth-child(4) .image-content {
+    background-color: #e0f7fa;
+}
+
+.service:nth-child(5) .image-content {
+    background-color: #ffe0b2;
+}
+
+.service:nth-child(6) .image-content {
+    background-color: #f1f8e9;
+}
+
+.three{
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    justify-items: center;
+    margin-top: 30px;
+}
+.card{
+    border: 0px solid black;
+    width: 480px;
+    box-shadow: 5px 5px 5px 5px grey;
+    border-radius: 10px;
+    gap: 5px;
+    margin-bottom: 100px;
+    transition: 0.01s;
+}
+button{
+    margin-left: 200px;
+    margin-bottom: 20px;
+    padding: 5px 5px 5px 5px;
+    background-color: var(--clr);
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    transform: 0.5s;
+    border: 0px;
+    box-shadow: 2px 2px 2px 2px gray;
+
+}
+button:hover{
+    color: #ffffff;
+}
+button::before{
+   content: '';
+   position: absolute;
+   top:0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #fff;
+   z-index: -1;
+   transform-origin: left;
+   transition: transform 0.5s ease ;
+   transform: scaleX(1);
+
+}
+button:hover::before{
+    transform-origin: right;
+     transition: transform 0.5s ease;
+     transform: scaleX(0);
+}
+
+.hero{
+    max-width: 500px;
+    height: 300px;
+    margin-left: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.caed, h3, p{
+    text-align: center;
+    margin-bottom: 20px;
+}
